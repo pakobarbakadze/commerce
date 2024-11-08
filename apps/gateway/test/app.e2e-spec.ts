@@ -1,22 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { INestGatewaylication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import { GatewayModule } from './../src/gateway.module';
 
-describe('AppController (e2e)', () => {
-  let app: INestApplication;
+describe('GatewayController (e2e)', () => {
+  let gateway: INestGatewaylication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
+      imports: [GatewayModule],
     }).compile();
 
-    app = moduleFixture.createNestApplication();
-    await app.init();
+    gateway = moduleFixture.createNestGatewaylication();
+    await gateway.init();
   });
 
   it('/ (GET)', () => {
-    return request(app.getHttpServer())
+    return request(gateway.getHttpServer())
       .get('/')
       .expect(200)
       .expect('Hello World!');
