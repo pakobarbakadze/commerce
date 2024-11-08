@@ -1,0 +1,55 @@
+services:
+  gateway:
+    container_name: gateway-service
+    build:
+      context: .
+      args:
+        - APP=gateway
+      target: ${NODE_ENV}
+    command: pnpm run start:debug gateway
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
+    networks:
+      - network
+
+  order:
+    container_name: order-service
+    build:
+      context: .
+      args:
+        - APP=order
+      target: ${NODE_ENV}
+    command: pnpm run start:debug order
+    ports:
+      - 3001:3001
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
+    networks:
+      - network
+
+  product:
+    container_name: product-service
+    build:
+      context: .
+      args:
+        - APP=product
+      target: ${NODE_ENV}
+    command: pnpm run start:debug product
+    ports:
+      - 3002:3002
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
+    networks:
+      - network
+
+networks:
+  network:
