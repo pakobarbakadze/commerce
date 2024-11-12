@@ -26,7 +26,7 @@ services:
       target: ${NODE_ENV}
     command: pnpm run start:debug order
     ports:
-      - 3001:3001
+      - 50051:50051
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -42,8 +42,6 @@ services:
         - APP=product
       target: ${NODE_ENV}
     command: pnpm run start:debug product
-    ports:
-      - 3002:3002
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
