@@ -27,6 +27,7 @@ services:
     command: pnpm run start:debug order
     ports:
       - 50051:50051
+      - 9230:9229
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -42,6 +43,9 @@ services:
         - APP=product
       target: ${NODE_ENV}
     command: pnpm run start:debug product
+    ports:
+      - 50052:50052
+      - 9231:9229
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules

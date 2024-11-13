@@ -1,0 +1,47 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Debug Gateway Service",
+      "address": "localhost",
+      "port": 9229,
+      "sourceMaps": true,
+      "restart": true,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src/app"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Debug Order Service",
+      "address": "localhost",
+      "port": 9230,
+      "sourceMaps": true,
+      "restart": true,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src/app"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Debug Product Service",
+      "address": "localhost",
+      "port": 9231,
+      "sourceMaps": true,
+      "restart": true,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src/app"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug All Ports",
+      "configurations": [
+        "Debug Gateway Service",
+        "Debug Order Service",
+        "Debug Product Service"
+      ]
+    }
+  ]
+}
