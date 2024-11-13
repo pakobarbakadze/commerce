@@ -1,4 +1,4 @@
-import { ProductRequest } from '../../../../../libs/shared/src/proto/product';
+import { ProductRequest } from '@app/shared/proto/product';
 
 export class CheckProductAvailabilityRequestDto implements ProductRequest {
   productId: string;

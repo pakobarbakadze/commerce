@@ -1,10 +1,10 @@
-import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
-import { ClientGrpc } from '@nestjs/microservices';
-import { firstValueFrom } from 'rxjs';
 import {
   PRODUCT_SERVICE_NAME,
   ProductServiceClient,
-} from '../../../../libs/shared/src/proto/product';
+} from '@app/shared/proto/product';
+import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
+import { ClientGrpc } from '@nestjs/microservices';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class ProductClientService implements OnModuleInit {

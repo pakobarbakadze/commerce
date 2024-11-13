@@ -1,10 +1,10 @@
-import { Module } from '@nestjs/common';
-import { ClientsModule, Transport } from '@nestjs/microservices';
-import { join } from 'path';
 import {
   ORDER_PACKAGE_NAME,
   ORDER_SERVICE_NAME,
-} from '../../../../libs/shared/src/proto/order';
+} from '@app/shared/proto/order';
+import { Module } from '@nestjs/common';
+import { ClientsModule, Transport } from '@nestjs/microservices';
+import { join } from 'path';
 
 @Module({
   imports: [

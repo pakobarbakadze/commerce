@@ -1,7 +1,7 @@
+import { ORDER_PACKAGE_NAME } from '@app/shared/proto/order';
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { join } from 'path';
-import { ORDER_PACKAGE_NAME } from '../../../libs/shared/src/proto/order';
 import { OrderModule } from './order.module';
 
 async function bootstrap() {

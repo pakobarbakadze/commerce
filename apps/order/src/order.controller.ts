@@ -1,11 +1,11 @@
-import { Controller } from '@nestjs/common';
-import { Observable } from 'rxjs';
 import {
   OrderRequest,
   OrderResponse,
   OrderServiceController,
   OrderServiceControllerMethods,
-} from '../../../libs/shared/src/proto/order';
+} from '@app/shared/proto/order';
+import { Controller } from '@nestjs/common';
+import { Observable } from 'rxjs';
 import { OrderService } from './order.service';
 
 @Controller()

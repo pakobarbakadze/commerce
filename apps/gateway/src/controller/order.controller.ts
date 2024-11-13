@@ -1,10 +1,10 @@
-import { Body, Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
-import { ClientGrpc } from '@nestjs/microservices';
 import {
   ORDER_SERVICE_NAME,
   OrderRequest,
   OrderServiceClient,
-} from '../../../../libs/shared/src/proto/order';
+} from '@app/shared/proto/order';
+import { Body, Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
+import { ClientGrpc } from '@nestjs/microservices';
 
 @Controller('order')
 export class OrderController implements OnModuleInit {
