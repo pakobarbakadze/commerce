@@ -5,6 +5,7 @@ import { ORDER_PACKAGE_NAME } from '../../../libs/shared/src/proto/order';
 import { OrderModule } from './order.module';
 
 async function bootstrap() {
+  // TODO: Move proto files to shared lib
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     OrderModule,
     {

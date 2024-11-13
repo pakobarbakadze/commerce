@@ -16,7 +16,7 @@ export class OrderController implements OnModuleInit {
 
   onModuleInit() {
     this.orderService =
-      this.client.getService<OrderServiceClient>('OrderService');
+      this.client.getService<OrderServiceClient>(ORDER_SERVICE_NAME);
   }
 
   @Post()

@@ -16,7 +16,6 @@ export class OrderController implements OrderServiceController {
   placeOrder(
     request: OrderRequest,
   ): Promise<OrderResponse> | Observable<OrderResponse> | OrderResponse {
-    console.log(request);
-    throw new Error('Method not implemented.');
+    return this.orderService.placeOrder(request);
   }
 }

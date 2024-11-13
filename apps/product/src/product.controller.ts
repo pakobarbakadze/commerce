@@ -1,12 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
+import { Observable } from 'rxjs';
+import {
+  ProductRequest,
+  ProductResponse,
+  ProductServiceController,
+  ProductServiceControllerMethods,
+} from '../../../libs/shared/src/proto/product';
 import { ProductService } from './product.service';
 
 @Controller()
-export class ProductController {
+@ProductServiceControllerMethods()
+export class ProductController implements ProductServiceController {
   constructor(private readonly productService: ProductService) {}
 
-  @Get()
-  getHello(): string {
-    return this.productService.getHello();
+  checkProductAvailability(
+    request: ProductRequest,
+  ): Promise<ProductResponse> | Observable<ProductResponse> | ProductResponse {
+    return this.productService.checkProductAvailability(request);
   }
 }
