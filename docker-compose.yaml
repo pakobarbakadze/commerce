@@ -53,5 +53,23 @@ services:
     networks:
       - network
 
+  payment:
+    container_name: payment-service
+    build:
+      context: .
+      args:
+        - APP=payment
+      target: ${NODE_ENV}
+    command: pnpm run start:debug payment
+    ports:
+      - 50053:50053
+      - 9232:9229
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
+    networks:
+      - network
+
 networks:
   network:

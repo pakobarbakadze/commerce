@@ -1,12 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
+import {
+  PaymentRequest,
+  PaymentResponse,
+  PaymentServiceController,
+  PaymentServiceControllerMethods,
+} from '@app/shared/proto/payment';
+import { Controller } from '@nestjs/common';
+import { Observable } from 'rxjs';
 import { PaymentService } from './payment.service';
 
 @Controller()
-export class PaymentController {
+@PaymentServiceControllerMethods()
+export class PaymentController implements PaymentServiceController {
   constructor(private readonly paymentService: PaymentService) {}
 
-  @Get()
-  getHello(): string {
-    return this.paymentService.getHello();
+  processPayment(
+    request: PaymentRequest,
+  ): Promise<PaymentResponse> | Observable<PaymentResponse> | PaymentResponse {
+    return this.paymentService.processPayment(request);
   }
 }

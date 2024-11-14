@@ -32,6 +32,17 @@
       "restart": true,
       "localRoot": "${workspaceFolder}",
       "remoteRoot": "/usr/src/app"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Debug Product Payment",
+      "address": "localhost",
+      "port": 9232,
+      "sourceMaps": true,
+      "restart": true,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src/app"
     }
   ],
   "compounds": [
@@ -40,7 +51,8 @@
       "configurations": [
         "Debug Gateway Service",
         "Debug Order Service",
-        "Debug Product Service"
+        "Debug Product Service",
+        "Debug Product Payment"
       ]
     }
   ]
