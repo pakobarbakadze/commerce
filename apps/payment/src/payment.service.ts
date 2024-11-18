@@ -9,6 +9,8 @@ export class PaymentService {
   public processPayment(
     payment: ProcessPaymentRequestDto,
   ): Promise<ProcessPaymentResponseDto> {
+    console.log('Processing payment:', payment);
+
     if (payment.amount < 0) {
       return Promise.resolve({
         success: false,
